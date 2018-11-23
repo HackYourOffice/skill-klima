@@ -21,7 +21,7 @@ class KlimaSkill(MycroftSkill):
         temperature = r.json()["state"]
         self.speak_dialog("getTemperature", data={"temperature": temperature})
 
-    @intent_handler(IntentBuilder("").require("foobar"))
+    @intent_handler(IntentBuilder("").require("kuba").require("foobar"))
     def handle_set_temperature_intent(self, message):
         print(message.data)
         temperature = message.data.get("temperature")
