@@ -1,5 +1,5 @@
 git add .
-git commit -m "first try for set temperature"
+git commit -m "$2"
 git push origin master 
 cd ../mycroft-skills
 git pull
