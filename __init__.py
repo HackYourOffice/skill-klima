@@ -2,6 +2,7 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import LOG
 import datetime
+import requests
 
 class KlimaSkill(MycroftSkill):
 
@@ -10,7 +11,10 @@ class KlimaSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder("").require("temperatur"))
     def handle_temperatur_intent(self, message):
-        self.speak_dialog("temperatur")
+        api_url = "http://openhab-test.synyx.coffee:8080/rest/items/Pokerraum_Temperature_Current"
+        r = requests.get(api_url)
+        temperatur = r.json()["state"]
+        self.speak_dialog("temperatur", data={"temperatur": temperatur})
 
 def create_skill():
     return KlimaSkill()
