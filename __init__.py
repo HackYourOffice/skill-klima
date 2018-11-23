@@ -9,7 +9,7 @@ class KlimaSkill(MycroftSkill):
     def __init__(self):
         super(KlimaSkill, self).__init__(name="KlimaSkill")
 
-    @intent_handler(IntentBuilder("getTemperature").require("getTemperature").require("room").build())
+    @intent_handler(IntentBuilder("GetTemperatureIntent").require("getTemperature").require("room").build())
     def handle_get_temperature_intent(self, message):
         print(message.data)
         raum = message.data.get("room")
@@ -20,13 +20,6 @@ class KlimaSkill(MycroftSkill):
         r = requests.get(api_url)
         temperature = r.json()["state"]
         self.speak_dialog("getTemperature", data={"temperature": temperature})
-
-    @intent_handler(IntentBuilder("").require("setTemperature").require("foobar").build())
-    def handle_set_temperature_intent(self, message):
-        print(message.data)
-        temperature = message.data.get("temperature")
-        print(temperature)
-        self.speak_dialog("setTemperature", data={"temperature": temperature})
 
 def create_skill():
     return KlimaSkill()
