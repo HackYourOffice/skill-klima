@@ -11,11 +11,11 @@ class KlimaSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder("").require("temperatur"))
     def handle_temperatur_intent(self, message):
-        print message.data
+        print(message.data)
         raum = message.data["raum"]
-        print raum
+        print(raum)
         raum = raum.title()
-        print raum
+        print(raum)
         api_url = "http://openhab-test.synyx.coffee:8080/rest/items/%s_Temperature_Current" % (raum)
         r = requests.get(api_url)
         temperatur = r.json()["state"]
