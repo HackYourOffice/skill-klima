@@ -1,1 +1,1 @@
-(auf| )? (?P<temperature>[d+]) grad
+(auf| )? (?P<temperature>\d+) grad
