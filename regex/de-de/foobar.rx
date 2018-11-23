@@ -1,1 +1,1 @@
- (?P<temperature>.*)
+ (kuba|fuba)? (?P<temperature>.*)
