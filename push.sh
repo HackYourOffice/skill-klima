@@ -8,4 +8,4 @@ git add skill-$1
 git commit -m "update $1"
 git push origin 18.08
 cd ../skill-klima
-ssh mycorf@10.0.200.216 './mycroft-core/bin/mycroft-msm -u https://github.com/HackYourOffice/mycroft-skills update skill-$1'
+ssh mycorf@10.0.200.216 "./mycroft-core/bin/mycroft-msm -u https://github.com/HackYourOffice/mycroft-skills update skill-$1"
