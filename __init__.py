@@ -9,19 +9,7 @@ class KlimaSkill(MycroftSkill):
     def __init__(self):
         super(KlimaSkill, self).__init__(name="KlimaSkill")
 
-    @intent_handler(IntentBuilder("getTemperature").require("getTemperature").require("room"))
-    def handle_get_temperature_intent(self, message):
-        print(message.data)
-        raum = message.data.get("room")
-        print(raum)
-        raum = raum.title()
-        print(raum)
-        api_url = "http://openhab-test.synyx.coffee:8080/rest/items/%s_Temperature_Current" % (raum)
-        r = requests.get(api_url)
-        temperature = r.json()["state"]
-        self.speak_dialog("getTemperature", data={"temperature": temperature})
-
-    @intent_handler(IntentBuilder("setTemperature").require("foobar"))
+    @intent_handler(IntentBuilder("").require("foobar"))
     def handle_set_temperature_intent(self, message):
         print(message.data)
         temperature = message.data.get("temperature")
