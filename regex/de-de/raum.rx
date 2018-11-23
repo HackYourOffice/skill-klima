@@ -1,1 +1,1 @@
-(im)? (?P<raum>.*)
+(im|der|die)? (?P<raum>.*)
