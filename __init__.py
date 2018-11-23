@@ -26,6 +26,8 @@ class KlimaSkill(MycroftSkill):
         print(message.data)
         temperature = message.data.get("temperature")
         room = message.data.get("room")
+        api_url = "http://openhab-test.synyx.coffee:8080/rest/items/%s_Temperature_Target" % (room)
+        requests.post(api_url, params=temperature)
         self.speak_dialog("setTemperature", data={"temperature": temperature, "room": room})
 
 def create_skill():
