@@ -26,7 +26,7 @@ class KlimaSkill(MycroftSkill):
         print(message.data)
         temperature = message.data.get("temperature")
         room = message.data.get("room")
-        self.speak_dialog("setTemperature", data={"temperature": temperature})
+        self.speak_dialog("setTemperature", data={"temperature": temperature, "room": room})
 
 def create_skill():
     return KlimaSkill()
