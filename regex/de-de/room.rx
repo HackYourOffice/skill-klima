@@ -1,1 +1,1 @@
-(im|der|die|in| |in der)? (?P<room>.*)
+(im|der|die|in der| |in)? (?P<room>.*)
