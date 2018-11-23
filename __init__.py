@@ -22,7 +22,7 @@ class KlimaSkill(MycroftSkill):
         self.speak_dialog("getTemperature", data={"temperature": temperature})
 
         @intent_handler(IntentBuilder("SetTemperaturIntent").require("setTemperature").require("temperature").build())
-    def handle_get_temperature_intent(self, message):
+    def handle_set_temperature_intent(self, message):
         print(message.data)
         temperature = message.data.get("temperature")
         self.speak_dialog("setTemperature", data={"temperature": temperature})
