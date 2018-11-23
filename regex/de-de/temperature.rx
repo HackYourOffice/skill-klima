@@ -1,1 +1,1 @@
-(auf| )? (?P<temperature2>[0-9]+)
+(auf| )? (?P<temperature2>[0-9]+) grad
