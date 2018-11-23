@@ -9,10 +9,10 @@ class KlimaSkill(MycroftSkill):
     def __init__(self):
         super(KlimaSkill, self).__init__(name="KlimaSkill")
 
-    @intent_handler(IntentBuilder("").require("temperatur"))
+    @intent_handler(IntentBuilder("").require("temperatur").require("raum"))
     def handle_temperatur_intent(self, message):
         print(message.data)
-        raum = message.data["raum"]
+        raum = message.data.get("raum")
         print(raum)
         raum = raum.title()
         print(raum)
