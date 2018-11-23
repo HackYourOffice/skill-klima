@@ -31,5 +31,9 @@ class KlimaSkill(MycroftSkill):
         requests.post(api_url, data=temperature)
         self.speak_dialog("setTemperature", data={"temperature": temperature, "room": room})
 
+    @intent_handler(IntentBuilder("PenisIntent").require("penis").build())
+    def handle_set_temperature_intent(self, message):
+        self.speak_dialog("penis")
+
 def create_skill():
     return KlimaSkill()
